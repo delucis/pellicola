@@ -1,0 +1,34 @@
+{
+  "name": "pellicule",
+  "description": "Generate video files from canvas animations in Node.js",
+  "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
+  "license": "GPL-3.0",
+  "scripts": {
+    "prerelease": "npm t",
+    "release": "standard-version -s",
+    "postrelease": "npm publish && git push --follow-tags",
+    "pretest": "standard",
+    "test": "nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "commitizen": "*",
+    "coveralls": "*",
+    "cz-conventional-changelog": "*",
+    "nyc": "*",
+    "standard": "*",
+    "standard-version": "*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delucis/pellicule.git"
+  },
+  "bugs": "https://github.com/delucis/pellicule/issues",
+  "homepage": "https://npmjs.com/package/pellicule"
+}
