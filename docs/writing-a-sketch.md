@@ -24,7 +24,7 @@ Your sketch function will be called while setting up your animation and the rend
 
 The render function that you provide will be called by `pellicola` for each frame of an animation that it needs to generate and it will be passed a series of variables for you to use.
 
-In the example above, we are using the `context`, `width`, and `height` variables to draw to a 2D canvas context and size things proportionally to the canvas’s dimensions. In addition to these variables, there are several we can use to locate ourselves within time in an animation sequence.
+In the example above, we are using the `context`, `width`, and `height` variables to draw to a 2D canvas context and size things proportionally to the canvas’s dimensions. In addition to these variables, there are several more we can use to locate ourselves within time in an animation sequence.
 
 For example, the `playhead` variable tells you how far through the total animation duration you are as a number between `0` and `1`:
 
@@ -37,7 +37,7 @@ const sketch = () => {
 }
 ```
 
-At the beginning of the animation, `playhead` is `0` so the rectangle drawn in the sketch function above will have a width and height of `0`. Halfway through the animation, `playhead` will be `0.5`, and the rectangle will take up half of the frame’s width and height. By the end of the animation, `playhead` will be `1` and the blue rectangle will take up the entire frame.
+At the beginning of the animation, `playhead` is `0` so the rectangle drawn in the render function above will have a width and height of `0`. Halfway through the animation, `playhead` will be `0.5`, and the rectangle will take up half of the frame’s width and height. By the end of the animation, `playhead` will be `1` and the blue rectangle will take up the entire frame.
 
 The following variables are available to your render function:
 
