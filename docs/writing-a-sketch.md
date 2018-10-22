@@ -41,19 +41,19 @@ At the beginning of the animation, `playhead` is `0` so the rectangle drawn in t
 
 The following variables are available to your render function:
 
-variable name | example value | what is it?
--------------:|---------------|-----------------------------------------------
-     `canvas` |               | An object representing the `<canvas>` element
-    `context` |               | Context returned by `canvas.getContext('2d')`
-      `width` | `640`         | Width of the canvas in pixels
-     `height` | `480`         | Height of the canvas in pixels
-       `time` | `2.5`         | Current elapsed time in seconds
-      `frame` | `60`          | Current frame number in the animation sequence
-   `playhead` | `0.25`        | Progress as a fraction between `0` and `1`
-  `deltaTime` | `0.041666`    | Time elapsed since last frame in seconds
-   `duration` | `10`          | Duration of the entire animation in seconds
+variable name | example value | description
+-------------:|:--------------|:----------------------------------------------
+`canvas`      |               | An object representing the `<canvas>` element
+`context`     |               | Context returned by `canvas.getContext('2d')`
+`width`       | `640`         | Width of the canvas in pixels
+`height`      | `480`         | Height of the canvas in pixels
+`time`        | `2.5`         | Current elapsed time in seconds
+`frame`       | `60`          | Current frame number in the animation sequence
+`playhead`    | `0.25`        | Progress as a fraction between `0` and `1`
+`deltaTime`   | `0.041666`    | Time elapsed since last frame in seconds
+`duration`    | `10`          | Duration of the entire animation in seconds
 `totalFrames` | `240`         | Total number of frames in the entire animation
-        `fps` | `24`          | Number of frames per second in the animation
+`fps`         | `24`          | Number of frames per second in the animation
 
 
 ### Asynchronous sketches
