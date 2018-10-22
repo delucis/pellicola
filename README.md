@@ -12,7 +12,7 @@ npm install --save pellicule
 
 ## Usage
 
-This package provides a lightweight framework for saving animations generated using `node-canvas` as video files using `ffmpeg`.
+This package provides a lightweight framework for generating animations with `node-canvas` and saving them as video files using `ffmpeg`.
 
 ```js
 const pellicule = require('pellicule')
@@ -36,12 +36,13 @@ const settings = {
 }
 
 pellicule(myAnimation, settings)
-  .catch(e => console.error(e))
   .then(path => console.log('Done saving video file to:', path))
   // => Done saving video file to: /path/to/current-directory/my-sketch.mp4
 ```
 
 Conceptually, `pellicule` uses the idea of the “sketch” that can be found in [Processing](https://processing.org/) and its Javascript cousin [p5.js](https://p5js.org/). The API tries to follow Matt DesLauriers’s [`canvas-sketch`](https://github.com/mattdesl/canvas-sketch) framework, which provides excellent tools for working on generative art with `<canvas>` in the web browser. The aim is to permit a sketch function developed using `canvas-sketch` to be re-used with `pellicule` with minimal adaptation.
+
+For more details, read the [**Documentation →**](docs/README.md)
 
 ## License
 
