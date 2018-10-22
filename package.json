@@ -39,6 +39,7 @@
   "dependencies": {
     "aproba": "^2.0.0",
     "canvas-prebuilt": "^2.0.0-alpha.14",
+    "mkdirp2": "^1.0.4",
     "tempy": "^0.2.1"
   }
 }
