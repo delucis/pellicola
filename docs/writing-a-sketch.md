@@ -1,10 +1,10 @@
-#### <sup>:movie_camera: [pellicule](../README.md) → [Documentation](./README.md) → Writing a sketch</sup>
+#### <sup>:movie_camera: [pellicola](../README.md) → [Documentation](./README.md) → Writing a sketch</sup>
 
 ---
 
 ## Writing a sketch
 
-When using `pellicule`, a sketch is a function that returns a render function:
+When using `pellicola`, a sketch is a function that returns a render function:
 
 ```js
 const sketch = () => {
@@ -22,7 +22,7 @@ Your sketch function will be called while setting up your animation and the rend
 
 ### Variables passed to your render function
 
-The render function that you provide will be called by `pellicule` for each frame of an animation that it needs to generate and it will be passed a series of variables for you to use.
+The render function that you provide will be called by `pellicola` for each frame of an animation that it needs to generate and it will be passed a series of variables for you to use.
 
 In the example above, we are using the `context`, `width`, and `height` variables to draw to a 2D canvas context and size things proportionally to the canvas’s dimensions. In addition to these variables, there are several we can use to locate ourselves within time in an animation sequence.
 
@@ -106,10 +106,10 @@ Now we can require your sketch function and use it elsewhere:
 
 ```js
 // index.js
-const pellicule = require('pellicule')
+const pellicola = require('pellicola')
 const mySketch = require('./sketches/display-text.js')
 
-pellicule(mySketch, { duration: 5 })
+pellicola(mySketch, { duration: 5 })
 ```
 
 ---

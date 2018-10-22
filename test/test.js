@@ -1,7 +1,7 @@
 import test from 'ava'
 import fs from 'fs'
 import { directory } from 'tempy'
-import m from '../lib/pellicule'
+import m from '../lib/pellicola'
 
 test('imports module', test => {
   test.is(typeof m, 'function')
