@@ -8,10 +8,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **frame-maker:** Fix playhead to end on 1 rather than 1 - 1/totalFrames ([100befc](https://github.com/delucis/pellicola/commit/100befc))
+* **frame-maker:** Fix playhead to end on `1` rather than `1 - 1 / totalFrames` ([100befc](https://github.com/delucis/pellicola/commit/100befc))
 
 
 ### Features
 
 * Initial commit of core functionality ([c095ec3](https://github.com/delucis/pellicola/commit/c095ec3))
-* **pellicule:** Allow sketch functions to be asynchronous ([eb38287](https://github.com/delucis/pellicola/commit/eb38287))
+* **pellicola:** Allow sketch functions to be asynchronous ([eb38287](https://github.com/delucis/pellicola/commit/eb38287))
