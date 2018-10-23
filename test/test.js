@@ -91,3 +91,7 @@ test.cb('can set a custom filename', test => {
       fs.readFile(src, test.end)
     })
 })
+
+test.cb('can use a custom framerate', test => {
+  cb(emptySketch, { fps: 12, totalFrames: 6, outDir: directory() }, test)
+})
