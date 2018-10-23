@@ -1,6 +1,7 @@
 import ava from 'ava'
 import ninos from 'ninos'
 import fs from 'fs'
+import path from 'path'
 import { directory } from 'tempy'
 import m from '../lib/pellicola'
 
@@ -80,4 +81,13 @@ test.cb('duration can be set using totalFrames option', test => {
 
 test.cb('can write frames as JPEGs', test => {
   cb(emptySketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() }, test)
+})
+
+test.cb('can set a custom filename', test => {
+  const filename = 'custom-name.mp4'
+  m(emptySketch, { filename, totalFrames: 6, outDir: directory() })
+    .then(src => {
+      test.is(path.basename(src), filename)
+      fs.readFile(src, test.end)
+    })
 })
