@@ -56,3 +56,11 @@ test('FrameMaker throws if provided an unuseable sketch argument', async test =>
     TypeError
   )
 })
+
+test.cb('FrameMaker can use a sketch that returns an object', test => {
+  const sketch = () => ({
+    render: () => {}
+  })
+  m(sketch, { duration: 0.25, outDir: directory() })
+    .then(src => fs.readFile(src, test.end))
+})
