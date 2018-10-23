@@ -37,6 +37,11 @@ test.cb('can load custom fonts', test => {
     .then(src => fs.readFile(src, test.end))
 })
 
+test('throws if provided neither totalFrames nor duration', async test => {
+  const sketch = () => () => {}
+  await test.throws(m(sketch), TypeError)
+})
+
 test('FrameMaker throws if provided an invalid frame format', async test => {
   const sketch = () => () => {}
   await test.throws(
