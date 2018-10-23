@@ -38,7 +38,7 @@
   "homepage": "https://npmjs.com/package/pellicola",
   "dependencies": {
     "aproba": "^2.0.0",
-    "canvas-prebuilt": "^2.0.0-alpha.14",
+    "canvas": "^2.0.1",
     "ffmpeg-static": "^2.3.0",
     "mkdirp2": "^1.0.4",
     "tempy": "^0.2.1"
