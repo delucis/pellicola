@@ -18,20 +18,16 @@ This package provides a lightweight framework for generating animations with `no
 const pellicola = require('pellicola')
 
 function myAnimation () {
+  // provide a function to draw video frames
   return function ({ context, width, height, playhead }) {
-    // set our fill colour to bright green
     context.fillStyle = '#0f0'
-    
-    // draw a rectangle that gradually fills the frame from left to right
-    // using the playhead variable, which moves from 0 to 1 over the
-    // course of the animation’s duration
     context.fillRect(0, 0, width * playhead, height)
   }
 }
 
 const settings = {
-  dimensions: [640, 360],   // animation will be 640px wide by 360px tall
-  duration: 2,              // animation will last 2 seconds
+  dimensions: [640, 360],   // video will be 640px wide by 360px tall
+  duration: 2,              // video will last 2 seconds
   filename: 'my-sketch.mp4' // set custom filename for output video
 }
 
@@ -42,7 +38,7 @@ pellicola(myAnimation, settings)
 
 Conceptually, `pellicola` uses the idea of the “sketch” that can be found in [Processing](https://processing.org/) and its Javascript cousin [p5.js](https://p5js.org/). The API tries to follow Matt DesLauriers’s [`canvas-sketch`](https://github.com/mattdesl/canvas-sketch) framework, which provides excellent tools for working on generative art with `<canvas>` in the web browser. The aim is to permit a sketch function developed using `canvas-sketch` to be re-used with `pellicola` with minimal adaptation.
 
-For more details, read the [**Documentation →**](docs/README.md)
+For more details, see the [**Documentation →**](docs/README.md)
 
 ## License
 
