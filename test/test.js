@@ -74,3 +74,15 @@ test('non-matching duration & totalFrames should raise a warning', async test =>
   await m(sketch, { duration: 1, totalFrames: 12, outDir: directory() })
   test.is(spy.calls.length, 1)
 })
+
+test.cb('duration can be set using totalFrames option', test => {
+  const sketch = () => () => {}
+  m(sketch, { totalFrames: 6, outDir: directory() })
+    .then(src => fs.readFile(src, test.end))
+})
+
+test.cb('can write frames as JPEGs', test => {
+  const sketch = () => () => {}
+  m(sketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() })
+    .then(src => fs.readFile(src, test.end))
+})
