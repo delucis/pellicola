@@ -36,3 +36,18 @@ test.cb('can load custom fonts', test => {
   m(sketch, { duration: 0.25, outDir: directory(), fonts })
     .then(src => fs.readFile(src, test.end))
 })
+
+test('FrameMaker throws if provided an invalid frame format', async test => {
+  const sketch = () => () => {}
+  await test.throws(
+    m(sketch, { duration: 0.25, frameFormat: 'bmp' }),
+    RangeError
+  )
+})
+
+test('FrameMaker throws if provided an unuseable sketch argument', async test => {
+  await test.throws(
+    m(() => 'i am a function but i return a string :-(', { duration: 0.25 }),
+    TypeError
+  )
+})
