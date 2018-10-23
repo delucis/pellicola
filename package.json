@@ -20,6 +20,7 @@
     "commitizen": "*",
     "coveralls": "*",
     "cz-conventional-changelog": "*",
+    "ninos": "^2.0.2",
     "nyc": "*",
     "standard": "*",
     "standard-version": "*"
