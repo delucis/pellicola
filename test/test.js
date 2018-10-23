@@ -70,7 +70,7 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
 })
 
 test('non-matching duration & totalFrames should raise a warning', async test => {
-  const spy = test.context.spy(console, 'warn')
+  const spy = test.context.spy(console, 'warn', () => {})
   await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory() })
   test.is(spy.calls.length, 1)
 })
