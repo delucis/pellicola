@@ -6,6 +6,8 @@ import m from '../lib/pellicola'
 
 const test = ninos(ava)
 
+const emptySketch = () => () => {}
+
 const cb = (sketch, opts, test) => m(sketch, opts)
   .then(src => fs.readFile(src, test.end))
 
@@ -42,14 +44,12 @@ test.cb('can load custom fonts', test => {
 })
 
 test('throws if provided neither totalFrames nor duration', async test => {
-  const sketch = () => () => {}
-  await test.throws(m(sketch), TypeError)
+  await test.throws(m(emptySketch), TypeError)
 })
 
 test('FrameMaker throws if provided an invalid frame format', async test => {
-  const sketch = () => () => {}
   await test.throws(
-    m(sketch, { duration: 0.25, frameFormat: 'bmp' }),
+    m(emptySketch, { duration: 0.25, frameFormat: 'bmp' }),
     RangeError
   )
 })
@@ -70,17 +70,14 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
 
 test('non-matching duration & totalFrames should raise a warning', async test => {
   const spy = test.context.spy(console, 'warn')
-  const sketch = () => () => {}
-  await m(sketch, { duration: 1, totalFrames: 12, outDir: directory() })
+  await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory() })
   test.is(spy.calls.length, 1)
 })
 
 test.cb('duration can be set using totalFrames option', test => {
-  const sketch = () => () => {}
-  cb(sketch, { totalFrames: 6, outDir: directory() }, test)
+  cb(emptySketch, { totalFrames: 6, outDir: directory() }, test)
 })
 
 test.cb('can write frames as JPEGs', test => {
-  const sketch = () => () => {}
-  cb(sketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() }, test)
+  cb(emptySketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() }, test)
 })
