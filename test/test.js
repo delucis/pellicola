@@ -1,7 +1,10 @@
-import test from 'ava'
+import ava from 'ava'
+import ninos from 'ninos'
 import fs from 'fs'
 import { directory } from 'tempy'
 import m from '../lib/pellicola'
+
+const test = ninos(ava)
 
 test('imports module', test => {
   test.is(typeof m, 'function')
@@ -63,4 +66,11 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
   })
   m(sketch, { duration: 0.25, outDir: directory() })
     .then(src => fs.readFile(src, test.end))
+})
+
+test('non-matching duration & totalFrames should raise a warning', async test => {
+  const spy = test.context.spy(console, 'warn')
+  const sketch = () => () => {}
+  await m(sketch, { duration: 1, totalFrames: 12, outDir: directory() })
+  test.is(spy.calls.length, 1)
 })
