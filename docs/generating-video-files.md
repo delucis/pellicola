@@ -39,7 +39,25 @@ durations.forEach(async duration => {
 })
 ```
 
+### Possible settings for `pellicola`
+
+The second argument to `pellicola` is an object configuring how your video will be generated. Some of the options impact how your canvas is drawn, while others control how the video is compiled.
+
+All settings are optional, except that you must include one of either `duration` or `totalFrames` to set how long your video will last.
+
+variable      | default      | description
+--------------|--------------|------------------------------------------------------
+`dimensions`  | `[640, 480]` | Sets `[width, height]` of your video
+`duration`    |              | Sets the duration of your video in seconds
+`filename`    | `'out.mp4'`  | Sets the filename of your video
+`fonts`       |              | An array of custom fonts to load (see [‘Using custom fonts’][fonts])
+`fps`         | `24`         | Number of frames per second in the animation
+`frameFormat` | `'png'`      | Sets canvas export format: either `'png'` or `'jpeg'`
+`outDir`      | `'.'`        | Path to the directory to save your video in
+`totalFrames` |              | Sets the duration of your video in frames
+
 [sketch]: ./writing-a-sketch.md
+[fonts]: ./using-custom-fonts.md
 
 ---
 
