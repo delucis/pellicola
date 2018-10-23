@@ -6,6 +6,9 @@ import m from '../lib/pellicola'
 
 const test = ninos(ava)
 
+const cb = (sketch, opts, test) => m(sketch, opts)
+  .then(src => fs.readFile(src, test.end))
+
 test('imports module', test => {
   test.is(typeof m, 'function')
 })
@@ -18,8 +21,7 @@ test.cb('generates a video', test => {
     ctx.fillRect(0, 0, width * playhead, height)
   }
 
-  m(sketch, { duration: 1, outDir: directory() })
-    .then(src => fs.readFile(src, test.end))
+  cb(sketch, { duration: 1, outDir: directory() }, test)
 })
 
 test.cb('can load custom fonts', test => {
@@ -36,8 +38,7 @@ test.cb('can load custom fonts', test => {
     ctx.fillText('Smaller bold text', 0, 100)
   }
 
-  m(sketch, { duration: 0.25, outDir: directory(), fonts })
-    .then(src => fs.readFile(src, test.end))
+  cb(sketch, { duration: 0.25, outDir: directory(), fonts }, test)
 })
 
 test('throws if provided neither totalFrames nor duration', async test => {
@@ -64,8 +65,7 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
   const sketch = () => ({
     render: () => {}
   })
-  m(sketch, { duration: 0.25, outDir: directory() })
-    .then(src => fs.readFile(src, test.end))
+  cb(sketch, { duration: 0.25, outDir: directory() }, test)
 })
 
 test('non-matching duration & totalFrames should raise a warning', async test => {
@@ -77,12 +77,10 @@ test('non-matching duration & totalFrames should raise a warning', async test =>
 
 test.cb('duration can be set using totalFrames option', test => {
   const sketch = () => () => {}
-  m(sketch, { totalFrames: 6, outDir: directory() })
-    .then(src => fs.readFile(src, test.end))
+  cb(sketch, { totalFrames: 6, outDir: directory() }, test)
 })
 
 test.cb('can write frames as JPEGs', test => {
   const sketch = () => () => {}
-  m(sketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() })
-    .then(src => fs.readFile(src, test.end))
+  cb(sketch, { frameFormat: 'jpeg', totalFrames: 6, outDir: directory() }, test)
 })
