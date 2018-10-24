@@ -39,6 +39,13 @@
   },
   "bugs": "https://github.com/delucis/pellicola/issues",
   "homepage": "https://npmjs.com/package/pellicola",
+  "keywords": [
+    "canvas",
+    "animation",
+    "video",
+    "ffmpeg",
+    "node-canvas"
+  ],
   "dependencies": {
     "aproba": "^2.0.0",
     "canvas": "^2.0.1",
