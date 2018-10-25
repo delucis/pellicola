@@ -95,3 +95,22 @@ test.cb('can set a custom filename', test => {
 test.cb('can use a custom framerate', test => {
   cb(emptySketch, { fps: 12, totalFrames: 6, outDir: directory() }, test)
 })
+
+test('exposes image-loading methods to render function', async test => {
+  test.plan(3)
+  const sketch = () => ({ Image, ImageData, loadImage }) => {
+    test.is(typeof Image, 'function')
+    test.is(typeof ImageData, 'function')
+    test.is(typeof loadImage, 'function')
+  }
+  await m(sketch, { totalFrames: 1, outDir: directory() })
+})
+
+test.cb('a render function can load an image', test => {
+  const sketch = () => ({ context, Image }) => {
+    const img = new Image()
+    img.onload = () => context.drawImage(img, 0, 0)
+    img.src = 'test/test.png'
+  }
+  cb(sketch, { totalFrames: 1, outDir: directory() }, test)
+})
