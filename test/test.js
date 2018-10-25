@@ -27,6 +27,10 @@ test.cb('generates a video', test => {
   cb(sketch, { duration: 1, outDir: directory() }, test)
 })
 
+test.cb('can render frames in parallel', test => {
+  cb(emptySketch, { renderInParallel: true, duration: 0.5, outDir: directory() }, test)
+})
+
 test.cb('can load custom fonts', test => {
   const fonts = [
     { family: 'testFont', path: 'test/test-regular.ttf' },
