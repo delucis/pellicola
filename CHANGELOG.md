@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/delucis/pellicola/compare/v0.3.1...v0.4.0) (2018-10-25)
+
+
+### Features
+
+* **frame-maker:** Expose canvas image methods to render functions ([#9](https://github.com/delucis/pellicola/issues/9)) ([b73c451](https://github.com/delucis/pellicola/commit/b73c451)), closes [#8](https://github.com/delucis/pellicola/issues/8)
+* Generate frames sequentially by default ([#10](https://github.com/delucis/pellicola/issues/10)) ([7996651](https://github.com/delucis/pellicola/commit/7996651)), closes [#5](https://github.com/delucis/pellicola/issues/5)
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/delucis/pellicola/compare/v0.3.0...v0.3.1) (2018-10-24)
 
