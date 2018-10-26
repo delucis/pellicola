@@ -13,3 +13,4 @@ The following documentation is still a work in progress, but will hopefully help
 - [Writing a sketch](./writing-a-sketch.md)
 - [Generating video files](./generating-video-files.md)
 - [Using custom fonts](./using-custom-fonts.md)
+- [Loading image files](./loading-image-files.md)
