@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/delucis/pellicola/compare/v0.4.0...v0.4.1) (2018-11-03)
+
+
+### Bug Fixes
+
+* Round totalFrames when calculated from duration & fps ([#13](https://github.com/delucis/pellicola/issues/13)) ([9ee74ea](https://github.com/delucis/pellicola/commit/9ee74ea)), closes [#12](https://github.com/delucis/pellicola/issues/12)
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/delucis/pellicola/compare/v0.3.1...v0.4.0) (2018-10-25)
 
