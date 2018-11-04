@@ -9,7 +9,7 @@ const test = ninos(ava)
 
 const emptySketch = () => () => {}
 
-const cb = (sketch, opts, test) => m(sketch, opts)
+const cb = (sketch, opts, test) => m(sketch, Object.assign({ silent: true }, opts))
   .then(src => fs.readFile(src, test.end))
 
 test('imports module', test => {
@@ -49,19 +49,19 @@ test.cb('can load custom fonts', test => {
 })
 
 test('throws if provided neither totalFrames nor duration', async test => {
-  await test.throws(m(emptySketch), TypeError)
+  await test.throws(m(emptySketch, { silent: true }), TypeError)
 })
 
 test('FrameMaker throws if provided an invalid frame format', async test => {
   await test.throws(
-    m(emptySketch, { duration: 0.25, frameFormat: 'bmp' }),
+    m(emptySketch, { duration: 0.25, frameFormat: 'bmp', silent: true }),
     RangeError
   )
 })
 
 test('FrameMaker throws if provided an unuseable sketch argument', async test => {
   await test.throws(
-    m(() => 'i am a function but i return a string :-(', { duration: 0.25 }),
+    m(() => 'i am a function but i return a string :-(', { duration: 0.25, silent: true }),
     TypeError
   )
 })
@@ -75,7 +75,7 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
 
 test('non-matching duration & totalFrames should raise a warning', async test => {
   const spy = test.context.spy(console, 'warn', () => {})
-  await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory() })
+  await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory(), silent: true })
   test.is(spy.calls.length, 1)
 })
 
@@ -89,7 +89,7 @@ test.cb('can write frames as JPEGs', test => {
 
 test.cb('can set a custom filename', test => {
   const filename = 'custom-name.mp4'
-  m(emptySketch, { filename, totalFrames: 6, outDir: directory() })
+  m(emptySketch, { filename, totalFrames: 6, outDir: directory(), silent: true })
     .then(src => {
       test.is(path.basename(src), filename)
       fs.readFile(src, test.end)
@@ -107,7 +107,7 @@ test('exposes image-loading methods to render function', async test => {
     test.is(typeof ImageData, 'function')
     test.is(typeof loadImage, 'function')
   }
-  await m(sketch, { totalFrames: 1, outDir: directory() })
+  await m(sketch, { totalFrames: 1, outDir: directory(), silent: true })
 })
 
 test.cb('a render function can load an image', test => {
