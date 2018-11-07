@@ -56,6 +56,7 @@ variable           | default      | description
 `outDir`           | `'.'`        | Path to the directory to save your video in
 `renderInParallel` | `false`      | If true, renders each frame in parallel in separate canvas contexts
 `totalFrames`      |              | Sets the duration of your video in frames
+`silent`           | `false`      | If true, doesn’t show progress spinners in your Terminal
 
 ### Rendering frames sequentially or in parallel
 
