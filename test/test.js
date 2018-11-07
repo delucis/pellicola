@@ -118,3 +118,7 @@ test.cb('a render function can load an image', test => {
   }
   cb(sketch, { totalFrames: 1, outDir: directory() }, test)
 })
+
+test.cb('can show spinners to monitor progress', test => {
+  cb(emptySketch, { totalFrames: 1, outDir: directory(), silent: false }, test)
+})
