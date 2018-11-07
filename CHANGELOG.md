@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/delucis/pellicola/compare/v0.4.1...v0.5.0) (2018-11-07)
+
+
+### Features
+
+* assert pellicola must be passed a function and an object ([eda89b4](https://github.com/delucis/pellicola/commit/eda89b4))
+* Show progress spinners on the command line ([#15](https://github.com/delucis/pellicola/issues/15)) ([4df84c8](https://github.com/delucis/pellicola/commit/4df84c8)), closes [#14](https://github.com/delucis/pellicola/issues/14)
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/delucis/pellicola/compare/v0.4.0...v0.4.1) (2018-11-03)
 
