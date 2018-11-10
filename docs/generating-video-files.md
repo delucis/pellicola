@@ -53,6 +53,7 @@ variable           | default      | description
 `fonts`            |              | An array of custom fonts to load (see [‘Using custom fonts’][fonts])
 `fps`              | `24`         | Number of frames per second in the animation
 `frameFormat`      | `'png'`      | Sets canvas export format: either `'png'` or `'jpeg'`
+`maxConcurrency`   | `16`         | If `renderInParallel` is `true`, sets maximum number of frames to render in parallel
 `outDir`           | `'.'`        | Path to the directory to save your video in
 `renderInParallel` | `false`      | If true, renders each frame in parallel in separate canvas contexts
 `totalFrames`      |              | Sets the duration of your video in frames

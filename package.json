@@ -47,6 +47,7 @@
     "node-canvas"
   ],
   "dependencies": {
+    "@delucis/stau": "^0.1.0",
     "aproba": "^2.0.0",
     "canvas": "^2.0.1",
     "ffmpeg-static": "^2.3.0",
