@@ -119,6 +119,21 @@ test.cb('a render function can load an image', test => {
   cb(sketch, { totalFrames: 1, outDir: directory() }, test)
 })
 
+test.cb('can render with motion blur', test => {
+  cb(emptySketch, { duration: 1, outDir: directory(), motionBlur: { samplesPerFrame: 4 } }, test)
+})
+
+test.cb('can render with motion blur and custom shutterAngle', test => {
+  cb(emptySketch, { duration: 1, outDir: directory(), motionBlur: { samplesPerFrame: 4, shutterAngle: 2 } }, test)
+})
+
+test('throws if render function throws with motion blur rendering', async test => {
+  const message = 'Failing render function'
+  const sketch = () => () => { throw new Error(message) }
+  const error = await test.throws(m(sketch, { duration: 1, motionBlur: { samplesPerFrame: 4 } }))
+  test.is(error.message, message)
+})
+
 test('throws if render function throws an error', async test => {
   const message = 'Failing render function'
   const sketch = () => () => { throw new Error(message) }
