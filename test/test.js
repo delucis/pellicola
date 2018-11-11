@@ -119,6 +119,13 @@ test.cb('a render function can load an image', test => {
   cb(sketch, { totalFrames: 1, outDir: directory() }, test)
 })
 
+test('throws if render function throws an error', async test => {
+  const message = 'Failing render function'
+  const sketch = () => () => { throw new Error(message) }
+  const error = await test.throws(m(sketch, { duration: 1 }))
+  test.is(error.message, message)
+})
+
 test.cb('can show spinners to monitor progress', test => {
   cb(emptySketch, { totalFrames: 1, outDir: directory(), silent: false }, test)
 })
