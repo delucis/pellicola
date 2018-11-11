@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/delucis/pellicola/compare/v0.6.1...v0.7.0) (2018-11-11)
+
+
+### Features
+
+* Add option to apply motion blur to frames ([#20](https://github.com/delucis/pellicola/issues/20)) ([aeca123](https://github.com/delucis/pellicola/commit/aeca123)), closes [#19](https://github.com/delucis/pellicola/issues/19)
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/delucis/pellicola/compare/v0.6.0...v0.6.1) (2018-11-11)
 
