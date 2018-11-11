@@ -14,4 +14,4 @@ The following documentation is still a work in progress, but will hopefully help
 - [Generating video files](./generating-video-files.md)
 - [Using custom fonts](./using-custom-fonts.md)
 - [Loading image files](./loading-image-files.md)
-- [Rendering with motion blur](./rendering-with-motion-blur.md˜)
+- [Rendering with motion blur](./rendering-with-motion-blur.md)
