@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/delucis/pellicola/compare/v0.6.0...v0.6.1) (2018-11-11)
+
+
+### Bug Fixes
+
+* Handle frame render errors better ([#18](https://github.com/delucis/pellicola/issues/18)) ([7363b24](https://github.com/delucis/pellicola/commit/7363b24)), closes [#16](https://github.com/delucis/pellicola/issues/16)
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/delucis/pellicola/compare/v0.5.0...v0.6.0) (2018-11-10)
 
