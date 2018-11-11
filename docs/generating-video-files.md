@@ -54,6 +54,7 @@ variable           | default      | description
 `fps`              | `24`         | Number of frames per second in the animation
 `frameFormat`      | `'png'`      | Sets canvas export format: either `'png'` or `'jpeg'`
 `maxConcurrency`   | `16`         | If `renderInParallel` is `true`, sets maximum number of frames to render in parallel
+`motionBlur`       |              | Configure motion blur (see [‘Rendering with motion blur’][motion-blur])
 `outDir`           | `'.'`        | Path to the directory to save your video in
 `renderInParallel` | `false`      | If true, renders each frame in parallel in separate canvas contexts
 `totalFrames`      |              | Sets the duration of your video in frames
@@ -79,6 +80,7 @@ On the left, frames are isolated and each frame contains only a single, transluc
 
 [sketch]: ./writing-a-sketch.md
 [fonts]: ./using-custom-fonts.md
+[motion-blur]: ./rendering-with-motion-blur.md
 
 ---
 
