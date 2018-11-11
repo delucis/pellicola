@@ -65,22 +65,22 @@ To render with motion blur you pass `pellicola` a `motionBlur` object with the f
 
 1. #### `samplesPerFrame`
   
-  Type: `Number` (must be an integer greater than `0`)
+    Type: `Number` (must be an integer greater than `0`)
 
-  You can think of `samplesPerFrame` as a “quality” setting for motion blur. If `samplesPerFrame` is `1` then no motion blur is applied because each frame is drawn just once. As you increase `samplesPerFrame`, your render function will be called for each sample. A higher number means a smoother blur, but will also mean more calculations and a slower render.
+    You can think of `samplesPerFrame` as a “quality” setting for motion blur. If `samplesPerFrame` is `1` then no motion blur is applied because each frame is drawn just once. As you increase `samplesPerFrame`, your render function will be called for each sample. A higher number means a smoother blur, but will also mean more calculations and a slower render.
 
 2. #### `shutterAngle`
   
-  Type: `Number`  
-  Default: `1`
-  
-  `shutterAngle` impacts how spaced out your samples are.
-  
-  If `shutterAngle` is `1` and `samplesPerFrame` is `4`, then you are effectively sampling frames `0`, `0.25`, `0.5`, and `0.75` for the first frame of your sketch, frames `1`, `1.25`, `1.5`, and `1.75` for the second frame, etc.
-  
-  If we reduce `shutterAngle` to `0.5`, then for the first frame of a sketch we would be sampling frames `0`, `0.125`, `0.25`, and `0.375`. The samples are closer together but there is a bigger jump to the next frame.
-  
-  If we increase `shutterAngle` to a larger number like `2`, then we essentially overlap frames, sampling frames `0`, `0.5`, `1`, and `1.5` for the first frame.
+    Type: `Number`  
+    Default: `1`
+
+    `shutterAngle` impacts how spaced out your samples are.
+
+    If `shutterAngle` is `1` and `samplesPerFrame` is `4`, then you are effectively sampling frames `0`, `0.25`, `0.5`, and `0.75` for the first frame of your sketch, frames `1`, `1.25`, `1.5`, and `1.75` for the second frame, etc.
+
+    If we reduce `shutterAngle` to `0.5`, then for the first frame of a sketch we would be sampling frames `0`, `0.125`, `0.25`, and `0.375`. The samples are closer together but there is a bigger jump to the next frame.
+
+    If we increase `shutterAngle` to a larger number like `2`, then we essentially overlap frames, sampling frames `0`, `0.5`, `1`, and `1.5` for the first frame.
 
 ### Credits
 
