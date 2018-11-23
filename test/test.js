@@ -100,6 +100,21 @@ test.cb('can use a custom framerate', test => {
   cb(emptySketch, { fps: 12, totalFrames: 6, outDir: directory() }, test)
 })
 
+test('exposes context to sketch function', async test => {
+  test.plan(7)
+  const sketch = ({ width, height, duration, totalFrames, fps, loadImage, ImageData }) => {
+    test.is(typeof width, 'number')
+    test.is(typeof height, 'number')
+    test.is(typeof duration, 'number')
+    test.is(typeof totalFrames, 'number')
+    test.is(typeof fps, 'number')
+    test.is(typeof ImageData, 'function')
+    test.is(typeof loadImage, 'function')
+    return () => {}
+  }
+  await m(sketch, { totalFrames: 1, outDir: directory(), silent: true })
+})
+
 test('exposes image-loading methods to render function', async test => {
   test.plan(3)
   const sketch = () => ({ Image, ImageData, loadImage }) => {
