@@ -47,6 +47,7 @@ All settings are optional, except that you must include one of either `duration`
 
 variable           | default      | description
 -------------------|--------------|---------------------------------------------------------------------
+`cleanup`          | `true`       | Enable/disable cleanup of temporary files  
 `dimensions`       | `[640, 480]` | Sets `[width, height]` of your video
 `duration`         |              | Sets the duration of your video in seconds
 `filename`         | `'out.mp4'`  | Sets the filename of your video
