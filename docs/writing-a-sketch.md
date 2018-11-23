@@ -54,6 +54,9 @@ variable name | example value | description
 `duration`    | `10`          | Duration of the entire animation in seconds
 `totalFrames` | `240`         | Total number of frames in the entire animation
 `fps`         | `24`          | Number of frames per second in the animation
+`loadImage`   | `function`    | Utility method for [loading images][imgs]
+`Image`       | `constructor` | Canvas `Image` instance constructor
+`ImageData`   | `constructor` | Canvas `ImageData` instance constructor  
 
 
 ### Asynchronous sketches
@@ -111,6 +114,8 @@ const mySketch = require('./sketches/display-text.js')
 
 pellicola(mySketch, { duration: 5 })
 ```
+
+[imgs]: ./loading-image-files.md
 
 ---
 
