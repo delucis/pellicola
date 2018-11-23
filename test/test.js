@@ -27,6 +27,14 @@ test.cb('generates a video', test => {
   cb(sketch, { duration: 1, outDir: directory() }, test)
 })
 
+test.cb('can render with a time offset', test => {
+  cb(emptySketch, { duration: 1, time: 0.5, outDir: directory() }, test)
+})
+
+test.cb('can render with a frame offset', test => {
+  cb(emptySketch, { duration: 1, frame: 5, outDir: directory() }, test)
+})
+
 test.cb('can render frames in parallel', test => {
   cb(emptySketch, { renderInParallel: true, duration: 0.5, outDir: directory() }, test)
 })
@@ -50,6 +58,10 @@ test.cb('can load custom fonts', test => {
 
 test('throws if provided neither totalFrames nor duration', async test => {
   await test.throws(m(emptySketch, { silent: true }), TypeError)
+})
+
+test('throws if totalFrames is less than initial frame', async test => {
+  await test.throws(m(emptySketch, { totalFrames: 6, frame: 12, silent: true }))
 })
 
 test('FrameMaker throws if provided an invalid frame format', async test => {
@@ -76,6 +88,12 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
 test('non-matching duration & totalFrames should raise a warning', async test => {
   const spy = test.context.spy(console, 'warn', () => {})
   await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory(), silent: true })
+  test.is(spy.calls.length, 1)
+})
+
+test('non-matching time & frame should raise a warning', async test => {
+  const spy = test.context.spy(console, 'warn', () => {})
+  await m(emptySketch, { duration: 1, time: 0.7, frame: 7, outDir: directory(), silent: true })
   test.is(spy.calls.length, 1)
 })
 

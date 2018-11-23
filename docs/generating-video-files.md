@@ -52,12 +52,14 @@ variable           | default      | description
 `filename`         | `'out.mp4'`  | Sets the filename of your video
 `fonts`            |              | An array of custom fonts to load (see [‘Using custom fonts’][fonts])
 `fps`              | `24`         | Number of frames per second in the animation
+`frame`            | `0`          | Sets the frame on which your video starts
 `frameFormat`      | `'png'`      | Sets canvas export format: either `'png'` or `'jpeg'`
 `maxConcurrency`   | `16`         | If `renderInParallel` is `true`, sets maximum number of frames to render in parallel
 `motionBlur`       |              | Configure motion blur (see [‘Rendering with motion blur’][motion-blur])
 `outDir`           | `'.'`        | Path to the directory to save your video in
 `renderInParallel` | `false`      | If true, renders each frame in parallel in separate canvas contexts
 `silent`           | `false`      | If true, doesn’t show progress spinners in your Terminal
+`time`             | `0`          | Sets the time at which your video starts
 `totalFrames`      |              | Sets the duration of your video in frames
 
 ### Rendering frames sequentially or in parallel
