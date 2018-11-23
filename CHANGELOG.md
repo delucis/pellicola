@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/delucis/pellicola/compare/v0.7.0...v0.8.0) (2018-11-23)
+
+
+### Features
+
+* **frame-maker:** Pass context to sketch functions ([#24](https://github.com/delucis/pellicola/issues/24)) ([122b57f](https://github.com/delucis/pellicola/commit/122b57f)), closes [#23](https://github.com/delucis/pellicola/issues/23)
+* Add option to render from time or frame offset ([#25](https://github.com/delucis/pellicola/issues/25)) ([aa956e8](https://github.com/delucis/pellicola/commit/aa956e8)), closes [#21](https://github.com/delucis/pellicola/issues/21)
+* Clean up temporary frame files by default ([#26](https://github.com/delucis/pellicola/issues/26)) ([2e7b989](https://github.com/delucis/pellicola/commit/2e7b989)), closes [#22](https://github.com/delucis/pellicola/issues/22)
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/delucis/pellicola/compare/v0.6.1...v0.7.0) (2018-11-11)
 
