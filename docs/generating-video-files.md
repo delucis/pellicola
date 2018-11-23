@@ -57,8 +57,8 @@ variable           | default      | description
 `motionBlur`       |              | Configure motion blur (see [‘Rendering with motion blur’][motion-blur])
 `outDir`           | `'.'`        | Path to the directory to save your video in
 `renderInParallel` | `false`      | If true, renders each frame in parallel in separate canvas contexts
-`totalFrames`      |              | Sets the duration of your video in frames
 `silent`           | `false`      | If true, doesn’t show progress spinners in your Terminal
+`totalFrames`      |              | Sets the duration of your video in frames
 
 ### Rendering frames sequentially or in parallel
 
