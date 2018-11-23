@@ -2,10 +2,11 @@ import ava from 'ava'
 import ninos from 'ninos'
 import fs from 'fs'
 import path from 'path'
-import { directory } from 'tempy'
+import tempy from 'tempy'
 import m from '../lib/pellicola'
 
 const test = ninos(ava)
+const { directory } = tempy
 
 const emptySketch = () => () => {}
 
@@ -176,4 +177,8 @@ test('throws if render function throws an error', async test => {
 
 test.cb('can show spinners to monitor progress', test => {
   cb(emptySketch, { totalFrames: 1, outDir: directory(), silent: false }, test)
+})
+
+test.cb('can disable temporary file cleanup', test => {
+  cb(emptySketch, { totalFrames: 1, outDir: directory(), cleanup: false }, test)
 })
