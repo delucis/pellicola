@@ -59,6 +59,39 @@ variable name | example value | description
 `ImageData`   | `constructor` | Canvas `ImageData` instance constructor  
 
 
+### Variables passed to your sketch function
+
+Similarly to how the render function is passed an object with various contextual information, your sketch function also receives variables that aren’t frame-specific.
+
+variable name | example value | description
+-------------:|:--------------|:----------------------------------------------
+`width`       | `640`         | Width of the canvas in pixels
+`height`      | `480`         | Height of the canvas in pixels
+`duration`    | `10`          | Duration of the entire animation in seconds
+`totalFrames` | `240`         | Total number of frames in the entire animation
+`fps`         | `24`          | Number of frames per second in the animation
+`loadImage`   | `function`    | Utility method for [loading images][imgs]
+`Image`       | `constructor` | Canvas `Image` instance constructor
+`ImageData`   | `constructor` | Canvas `ImageData` instance constructor
+
+This can be useful in initialising variables to use in your render function:
+
+```js
+const sketch = ({ duration }) => {
+  // Make an array with one random number per second
+  const randomNumbers = []
+  for (let index = 0; index < duration; index++) {
+    randomNumbers.push(Math.random().toFixed(2))
+  }
+  
+  return ({ context, width, height, time }) => {
+    // Draw this second’s random number to the canvas
+    const number = randomNumbers[Math.floor(time)]
+    context.fillText(number, width / 2, height / 2)
+  }
+}
+```
+
 ### Asynchronous sketches
 
 Both your sketch function and the render function it returns can be asynchronous if needed:
