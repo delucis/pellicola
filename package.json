@@ -49,7 +49,7 @@
   "dependencies": {
     "aproba": "^2.0.0",
     "canvas": "^2.0.1",
-    "del": "^3.0.0",
+    "del": "^4.0.0",
     "ffmpeg-static": "^2.3.0",
     "mkdirp2": "^1.0.4",
     "ora": "^3.0.0",
