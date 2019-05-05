@@ -58,22 +58,22 @@ test.cb('can load custom fonts', test => {
 })
 
 test('throws if provided neither totalFrames nor duration', async test => {
-  await test.throws(m(emptySketch, { silent: true }), TypeError)
+  await test.throwsAsync(m(emptySketch, { silent: true }), TypeError)
 })
 
 test('throws if totalFrames is less than initial frame', async test => {
-  await test.throws(m(emptySketch, { totalFrames: 6, frame: 12, silent: true }))
+  await test.throwsAsync(m(emptySketch, { totalFrames: 6, frame: 12, silent: true }))
 })
 
 test('FrameMaker throws if provided an invalid frame format', async test => {
-  await test.throws(
+  await test.throwsAsync(
     m(emptySketch, { duration: 0.25, frameFormat: 'bmp', silent: true }),
     RangeError
   )
 })
 
 test('FrameMaker throws if provided an unuseable sketch argument', async test => {
-  await test.throws(
+  await test.throwsAsync(
     m(() => 'i am a function but i return a string :-(', { duration: 0.25, silent: true }),
     TypeError
   )
@@ -164,14 +164,14 @@ test.cb('can render with motion blur and custom shutterAngle', test => {
 test('throws if render function throws with motion blur rendering', async test => {
   const message = 'Failing render function'
   const sketch = () => () => { throw new Error(message) }
-  const error = await test.throws(m(sketch, { duration: 1, motionBlur: { samplesPerFrame: 4 } }))
+  const error = await test.throwsAsync(m(sketch, { duration: 1, motionBlur: { samplesPerFrame: 4 } }))
   test.is(error.message, message)
 })
 
 test('throws if render function throws an error', async test => {
   const message = 'Failing render function'
   const sketch = () => () => { throw new Error(message) }
-  const error = await test.throws(m(sketch, { duration: 1 }))
+  const error = await test.throwsAsync(m(sketch, { duration: 1 }))
   test.is(error.message, message)
 })
 
