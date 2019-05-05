@@ -9,7 +9,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">=7.6.0 <11"
+    "node": ">=8 <12"
   },
   "scripts": {
     "prerelease": "npm t",
@@ -20,13 +20,13 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "commitizen": "^3.0.4",
-    "coveralls": "^3.0.2",
+    "commitizen": "^3.1.1",
+    "coveralls": "^3.0.3",
     "cz-conventional-changelog": "^2.1.0",
-    "nyc": "^14.0.0",
+    "nyc": "^14.1.0",
     "ninos": "^3.0.0",
     "standard": "^12.0.1",
-    "standard-version": "^5.0.0"
+    "standard-version": "^5.0.2"
   },
   "config": {
     "commitizen": {
@@ -48,12 +48,12 @@
   ],
   "dependencies": {
     "aproba": "^2.0.0",
-    "canvas": "^2.0.1",
-    "del": "^4.0.0",
-    "ffmpeg-static": "^2.3.0",
+    "canvas": "^2.4.1",
+    "del": "^4.1.1",
+    "ffmpeg-static": "^2.4.0",
     "mkdirp2": "^1.0.4",
-    "ora": "^3.0.0",
-    "p-queue": "^4.0.0",
-    "tempy": "^0.2.1"
+    "ora": "^3.4.0",
+    "p-queue": "^5.0.0",
+    "tempy": "^0.3.0"
   }
 }
