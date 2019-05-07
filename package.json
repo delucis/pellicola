@@ -11,6 +11,8 @@
   "engines": {
     "node": ">=8"
   },
+  "os": [ "darwin", "linux", "win32" ],
+  "cpu": [ "x64" ],
   "scripts": {
     "prerelease": "npm t",
     "release": "standard-version -s",
