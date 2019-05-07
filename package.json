@@ -1,7 +1,7 @@
 {
   "name": "pellicola",
   "description": "🎥 Generate video files from <canvas> animations in Node.js",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
   "license": "GPL-3.0",
   "main": "lib/pellicola.js",
@@ -11,8 +11,14 @@
   "engines": {
     "node": ">=8"
   },
-  "os": [ "darwin", "linux", "win32" ],
-  "cpu": [ "x64" ],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
   "scripts": {
     "prerelease": "npm t",
     "release": "standard-version -s",
