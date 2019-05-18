@@ -36,6 +36,32 @@ test.cb('can render with a frame offset', test => {
   cb(emptySketch, { duration: 1, frame: 5, outDir: directory() }, test)
 })
 
+test('rendering with an offset provides correct context variables', async test => {
+  const sketch = () => ({ duration, totalFrames, playhead, frame }) => {
+    test.log({ duration, totalFrames, playhead, frame })
+    test.is(playhead, 1)
+    test.is(frame, 47)
+    test.is(duration, 2)
+    test.is(totalFrames, 48)
+  }
+  await m(sketch, { duration: 2, frame: 47, outDir: directory(), silent: true })
+})
+
+test.cb('can render with a frame truncation', test => {
+  cb(emptySketch, { duration: 1, endFrame: 12, outDir: directory() }, test)
+})
+
+test.cb('can render with a time truncation', test => {
+  cb(emptySketch, { duration: 1, endTime: 0.5, outDir: directory() }, test)
+})
+
+test('can render a portion of a sketch', async test => {
+  let count = 0
+  const sketch = () => () => { count++ }
+  await m(sketch, { duration: 2, time: 0.5, endTime: 1.5, outDir: directory() })
+  test.is(count, 24)
+})
+
 test.cb('can render frames in parallel', test => {
   cb(emptySketch, { renderInParallel: true, duration: 0.5, outDir: directory() }, test)
 })
