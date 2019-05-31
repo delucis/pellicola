@@ -120,6 +120,14 @@ const warningTests = [
   {
     name: 'non-matching time & frame should raise a warning',
     opts: { time: 0.7, frame: 7 }
+  },
+  {
+    name: 'non-matching endTime & endFrame should raise a warning',
+    opts: { endTime: 0.7, endFrame: 7 }
+  },
+  {
+    name: 'an endFrame beyond the end of the duration should raise a warning',
+    opts: { duration: 1, endFrame: 25 }
   }
 ]
 
