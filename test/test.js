@@ -112,16 +112,23 @@ test.cb('FrameMaker can use a sketch that returns an object', test => {
   cb(sketch, { duration: 0.25, outDir: directory() }, test)
 })
 
-test('non-matching duration & totalFrames should raise a warning', async test => {
-  const spy = test.context.spy(console, 'warn', () => {})
-  await m(emptySketch, { duration: 1, totalFrames: 12, outDir: directory(), silent: true })
-  test.is(spy.calls.length, 1)
-})
+const warningTests = [
+  {
+    name: 'non-matching duration & totalFrames should raise a warning',
+    opts: { duration: 1, totalFrames: 12 }
+  },
+  {
+    name: 'non-matching time & frame should raise a warning',
+    opts: { time: 0.7, frame: 7 }
+  }
+]
 
-test('non-matching time & frame should raise a warning', async test => {
-  const spy = test.context.spy(console, 'warn', () => {})
-  await m(emptySketch, { duration: 1, time: 0.7, frame: 7, outDir: directory(), silent: true })
-  test.is(spy.calls.length, 1)
+warningTests.forEach(({ name, opts }) => {
+  test(name, async test => {
+    const spy = test.context.spy(console, 'warn', () => {})
+    await m(emptySketch, { duration: 1, outDir: directory(), silent: true, ...opts })
+    test.is(spy.calls.length, 1)
+  })
 })
 
 test.cb('duration can be set using totalFrames option', test => {
