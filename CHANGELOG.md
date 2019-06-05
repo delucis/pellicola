@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/delucis/pellicola/compare/v0.9.1...v0.10.0) (2019-06-05)
+
+
+### Features
+
+* Fix start frame option and add end frame option ([9b68717](https://github.com/delucis/pellicola/commit/9b68717))
+
+
+### Tests
+
+* Add tests for endTime/endFrame conflict warnings ([e7b6c89](https://github.com/delucis/pellicola/commit/e7b6c89))
+
+
+
 ### [0.9.1](https://github.com/delucis/pellicola/compare/v0.9.0...v0.9.1) (2019-05-07)
 
 
