@@ -50,6 +50,8 @@ variable           | default      | description
 `cleanup`          | `true`       | Enable/disable cleanup of temporary files  
 `dimensions`       | `[640, 480]` | Sets `[width, height]` of your video
 `duration`         |              | Sets the duration of your video in seconds
+`endFrame`         | `totalFrames` | Sets the frame on which your video ends
+`endTime`          | `duration`   | Sets the time at which your video ends
 `filename`         | `'out.mp4'`  | Sets the filename of your video
 `fonts`            |              | An array of custom fonts to load (see [‘Using custom fonts’][fonts])
 `fps`              | `24`         | Number of frames per second in the animation
