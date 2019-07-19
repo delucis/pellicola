@@ -10,7 +10,7 @@ const { directory } = tempy
 
 const emptySketch = () => () => {}
 
-const cb = (sketch, opts, test) => m(sketch, Object.assign({ silent: true }, opts))
+const cb = (sketch, opts, test) => m(sketch, { silent: true, ...opts })
   .then(src => fs.readFile(src, test.end))
 
 test('imports module', test => {
