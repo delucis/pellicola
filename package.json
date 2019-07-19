@@ -27,10 +27,10 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
-    "ava": "^2.0.0",
-    "commitizen": "^3.1.1",
-    "coveralls": "^3.0.3",
-    "cz-conventional-changelog": "^2.1.0",
+    "ava": "^2.2.0",
+    "commitizen": "^4.0.2",
+    "coveralls": "^3.0.5",
+    "cz-conventional-changelog": "^3.0.0",
     "nyc": "^14.1.1",
     "ninos": "^3.0.0",
     "standard": "^12.0.1",
@@ -58,10 +58,10 @@
     "aproba": "^2.0.0",
     "canvas": "^2.5.0",
     "del": "^4.1.1",
-    "ffmpeg-static": "^2.4.0",
+    "ffmpeg-static": "^2.5.0",
     "mkdirp2": "^1.0.4",
     "ora": "^3.4.0",
-    "p-queue": "^6.0.1",
+    "p-queue": "^6.1.0",
     "tempy": "^0.3.0"
   }
 }
