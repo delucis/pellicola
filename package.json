@@ -31,7 +31,7 @@
     "commitizen": "^4.0.2",
     "coveralls": "^3.0.5",
     "cz-conventional-changelog": "^3.0.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "ninos": "^3.0.0",
     "standard": "^14.0.0",
     "standard-version": "^7.0.0"
