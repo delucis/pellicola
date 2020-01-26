@@ -86,7 +86,7 @@ test.cb('can load custom fonts', test => {
 test('throws if provided neither totalFrames nor duration', async test => {
   await test.throwsAsync(
     m(emptySketch, { silent: true }),
-    { instanceof: TypeError }
+    { instanceOf: TypeError }
   )
 })
 
@@ -97,14 +97,14 @@ test('throws if totalFrames is less than initial frame', async test => {
 test('FrameMaker throws if provided an invalid frame format', async test => {
   await test.throwsAsync(
     m(emptySketch, { duration: 0.25, frameFormat: 'bmp', silent: true }),
-    { instanceof: RangeError }
+    { instanceOf: RangeError }
   )
 })
 
 test('FrameMaker throws if provided an unuseable sketch argument', async test => {
   await test.throwsAsync(
     m(() => 'i am a function but i return a string :-(', { duration: 0.25, silent: true }),
-    { instanceof: TypeError }
+    { instanceOf: TypeError }
   )
 })
 
