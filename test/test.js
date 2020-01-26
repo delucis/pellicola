@@ -1,9 +1,9 @@
-import ava from 'ava'
-import ninos from 'ninos'
-import fs from 'fs'
-import path from 'path'
-import tempy from 'tempy'
-import m from '../lib/pellicola'
+const ava = require('ava')
+const ninos = require('ninos')
+const fs = require('fs')
+const path = require('path')
+const tempy = require('tempy')
+const m = require('../lib/pellicola')
 
 const test = ninos(ava)
 const { directory } = tempy
