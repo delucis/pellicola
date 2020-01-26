@@ -1,9 +1,9 @@
-import ava from 'ava'
-import ninos from 'ninos'
-import fs from 'fs'
-import path from 'path'
-import tempy from 'tempy'
-import m from '../lib/pellicola'
+const ava = require('ava')
+const ninos = require('ninos')
+const fs = require('fs')
+const path = require('path')
+const tempy = require('tempy')
+const m = require('../lib/pellicola')
 
 const test = ninos(ava)
 const { directory } = tempy
@@ -84,7 +84,10 @@ test.cb('can load custom fonts', test => {
 })
 
 test('throws if provided neither totalFrames nor duration', async test => {
-  await test.throwsAsync(m(emptySketch, { silent: true }), TypeError)
+  await test.throwsAsync(
+    m(emptySketch, { silent: true }),
+    { instanceOf: TypeError }
+  )
 })
 
 test('throws if totalFrames is less than initial frame', async test => {
@@ -94,14 +97,14 @@ test('throws if totalFrames is less than initial frame', async test => {
 test('FrameMaker throws if provided an invalid frame format', async test => {
   await test.throwsAsync(
     m(emptySketch, { duration: 0.25, frameFormat: 'bmp', silent: true }),
-    RangeError
+    { instanceOf: RangeError }
   )
 })
 
 test('FrameMaker throws if provided an unuseable sketch argument', async test => {
   await test.throwsAsync(
     m(() => 'i am a function but i return a string :-(', { duration: 0.25, silent: true }),
-    TypeError
+    { instanceOf: TypeError }
   )
 })
 
