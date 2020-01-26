@@ -9,7 +9,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "os": [
     "darwin",
@@ -27,7 +27,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
-    "ava": "^2.4.0",
+    "ava": "^3.0.0",
     "commitizen": "^4.0.3",
     "coveralls": "^3.0.9",
     "cz-conventional-changelog": "^3.0.2",

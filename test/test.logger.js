@@ -1,5 +1,5 @@
-import test from 'ava'
-import logger from '../lib/logger'
+const test = require('ava')
+const logger = require('../lib/logger')
 
 test('it can return an ora stub', t => {
   const silentOra = logger({ silent: true })
