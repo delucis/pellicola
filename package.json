@@ -27,14 +27,14 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
-    "ava": "^3.0.0",
+    "ava": "^3.1.0",
     "commitizen": "^4.0.3",
     "coveralls": "^3.0.9",
     "cz-conventional-changelog": "^3.0.2",
     "nyc": "^15.0.0",
     "ninos": "^3.0.0",
     "standard": "^14.3.1",
-    "standard-version": "^7.0.1"
+    "standard-version": "^7.1.0"
   },
   "config": {
     "commitizen": {
@@ -57,7 +57,7 @@
   "dependencies": {
     "aproba": "^2.0.0",
     "canvas": "^2.6.1",
-    "del": "^4.1.1",
+    "del": "^5.1.0",
     "ffmpeg-static": "^3.0.0",
     "mkdirp2": "^1.0.4",
     "ora": "^4.0.3",
