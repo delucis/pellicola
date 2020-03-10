@@ -58,7 +58,7 @@
     "aproba": "^2.0.0",
     "canvas": "^2.6.1",
     "del": "^5.1.0",
-    "ffmpeg-static": "^4.0.0",
+    "ffmpeg-static": "^4.0.1",
     "mkdirp2": "^1.0.4",
     "ora": "^4.0.3",
     "p-queue": "^6.3.0",
