@@ -27,14 +27,14 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
-    "ava": "^3.1.0",
+    "ava": "^3.9.0",
     "commitizen": "^4.1.2",
-    "coveralls": "^3.0.9",
-    "cz-conventional-changelog": "^3.0.2",
+    "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.2.0",
     "ninos": "^3.0.0",
-    "nyc": "^15.0.0",
-    "standard": "^14.3.1",
-    "standard-version": "^7.1.0"
+    "nyc": "^15.1.0",
+    "standard": "^14.3.4",
+    "standard-version": "^8.0.0"
   },
   "config": {
     "commitizen": {
