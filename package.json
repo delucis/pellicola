@@ -26,13 +26,13 @@
     "test": "nyc --reporter=lcov --reporter=text ava"
   },
   "devDependencies": {
-    "ava": "^3.11.1",
-    "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
+    "ava": "^3.15.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
     "ninos": "^3.0.0",
     "nyc": "^15.1.0",
     "standard": "^14.3.4",
-    "standard-version": "^8.0.2"
+    "standard-version": "^9.2.0"
   },
   "config": {
     "commitizen": {
@@ -54,12 +54,12 @@
   ],
   "dependencies": {
     "aproba": "^2.0.0",
-    "canvas": "^2.6.1",
+    "canvas": "^2.7.0",
     "del": "^5.1.0",
     "ffmpeg-static": "^4.3.0",
     "mkdirp2": "^1.0.4",
-    "ora": "^4.1.1",
+    "ora": "^5.4.0",
     "p-queue": "^6.6.2",
-    "tempy": "^0.6.0"
+    "tempy": "^1.0.1"
   }
 }
