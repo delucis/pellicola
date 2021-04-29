@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.5](https://github.com/delucis/pellicola/compare/v0.11.4...v0.11.5) (2021-04-29)
+
 ### [0.11.4](https://github.com/delucis/pellicola/compare/v0.11.3...v0.11.4) (2021-04-29)
 
 ### [0.11.3](https://github.com/delucis/pellicola/compare/v0.11.2...v0.11.3) (2020-08-08)
