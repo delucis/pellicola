@@ -18,6 +18,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      # Canvas requires some additional packages not available by default in the provided environment.
+      # https://github.com/Automattic/node-canvas/blob/master/.github/workflows/ci.yaml
+      - name: Install required system packages
+        run: |
+          sudo apt update
+          sudo apt install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev librsvg2-dev
       - name: Cache node modules
         uses: actions/cache@v2
         with:
