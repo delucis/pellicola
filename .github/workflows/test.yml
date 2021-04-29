@@ -7,7 +7,7 @@ on:
     branches: [latest]
 
 jobs:
-  Linux:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -40,82 +40,13 @@ jobs:
       - name: Report test coverage to Coveralls
         uses: coverallsapp/github-action@master
         with:
-          flag-name: test-${{ runner.os }}-node@${{ matrix.node }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel: true
-          path-to-lcov: ./coverage/lcov.info
-
-  Windows:
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        node: [10.x, 12.x, 14.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
-      # Canvas requires some additional packages not available by default in the provided environment.
-      # https://github.com/Automattic/node-canvas/blob/master/.github/workflows/ci.yaml
-      - name: Install required system packages
-        run: |
-          Invoke-WebRequest "https://ftp-osl.osuosl.org/pub/gnome/binaries/win64/gtk+/2.22/gtk+-bundle_2.22.1-20101229_win64.zip" -OutFile "gtk.zip"
-          Expand-Archive gtk.zip -DestinationPath "C:\GTK"
-          Invoke-WebRequest "https://downloads.sourceforge.net/project/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4-vc64.exe" -OutFile "libjpeg.exe" -UserAgent NativeHost
-          .\libjpeg.exe /S
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test
-      - name: Report test coverage to Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          flag-name: test-${{ runner.os }}-node@${{ matrix.node }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel: true
-          path-to-lcov: ./coverage/lcov.info
-
-  macOS:
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        node: [10.x, 12.x, 14.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
-      # Canvas requires some additional packages not available by default in the provided environment.
-      # https://github.com/Automattic/node-canvas/blob/master/.github/workflows/ci.yaml
-      - name: Install required system packages
-        run: |
-          brew update
-          brew install pkg-config cairo pango libpng jpeg giflib librsvg
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-            ${{ runner.os }}-
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test
-      - name: Report test coverage to Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          flag-name: test-${{ runner.os }}-node@${{ matrix.node }}
+          flag-name: test-node@${{ matrix.node }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           path-to-lcov: ./coverage/lcov.info
 
   onEnd:
-    needs: [Linux, Windows, macOS]
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Coveralls Finished
