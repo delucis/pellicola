@@ -1,6 +1,6 @@
 # pellicola
 
-[![npm version](https://img.shields.io/npm/v/pellicola.svg)](https://www.npmjs.com/package/pellicola) [![node](https://img.shields.io/node/v/pellicola.svg)](#) [![Build Status](https://travis-ci.com/delucis/pellicola.svg?branch=latest)](https://travis-ci.com/delucis/pellicola) [![Coverage Status](https://coveralls.io/repos/github/delucis/pellicola/badge.svg?branch=latest)](https://coveralls.io/github/delucis/pellicola?branch=latest) [![Known Vulnerabilities](https://snyk.io/test/npm/pellicola/badge.svg)](https://snyk.io/test/npm/pellicola)
+[![npm version](https://img.shields.io/npm/v/pellicola.svg)](https://www.npmjs.com/package/pellicola) [![node](https://img.shields.io/node/v/pellicola.svg)](#) [![Build Status](https://github.com/delucis/pellicola/actions/workflows/test.yml/badge.svg)](https://github.com/delucis/pellicola/actions/workflows/test.yml) [![Coverage Status](https://coveralls.io/repos/github/delucis/pellicola/badge.svg?branch=latest)](https://coveralls.io/github/delucis/pellicola?branch=latest) [![Known Vulnerabilities](https://snyk.io/test/npm/pellicola/badge.svg)](https://snyk.io/test/npm/pellicola)
 
 > Generate video files from `<canvas>` animations in Node.js
 
