@@ -31,8 +31,8 @@
     "cz-conventional-changelog": "^3.3.0",
     "ninos": "^3.0.0",
     "nyc": "^15.1.0",
-    "standard": "^14.3.4",
-    "standard-version": "^9.2.0"
+    "standard": "^16.0.3",
+    "standard-version": "^9.3.0"
   },
   "config": {
     "commitizen": {
@@ -55,7 +55,7 @@
   "dependencies": {
     "aproba": "^2.0.0",
     "canvas": "^2.7.0",
-    "del": "^5.1.0",
+    "del": "^6.0.0",
     "ffmpeg-static": "^4.3.0",
     "mkdirp2": "^1.0.4",
     "ora": "^5.4.0",
