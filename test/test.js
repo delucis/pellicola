@@ -28,6 +28,10 @@ test.cb('generates a video', test => {
   cb(sketch, { duration: 1, outDir: directory() }, test)
 })
 
+test.cb('writes directories recursively', test => {
+  cb(emptySketch, { duration: 1, outDir: path.join(directory(), 'foo', 'bar') }, test)
+})
+
 test.cb('can render with a time offset', test => {
   cb(emptySketch, { duration: 1, time: 0.5, outDir: directory() }, test)
 })
