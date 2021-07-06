@@ -5,8 +5,10 @@
   "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
   "license": "GPL-3.0",
   "main": "lib/pellicola.js",
+  "types": "types/pellicola.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "engines": {
     "node": ">=10"
@@ -20,8 +22,9 @@
     "x64"
   ],
   "scripts": {
-    "prerelease": "npm t",
+    "prerelease": "npm t && npm run build-types",
     "release": "standard-version -s",
+    "build-types": "tsc",
     "pretest": "standard",
     "test": "nyc --reporter=lcov --reporter=text ava"
   },
@@ -32,7 +35,8 @@
     "ninos": "^3.0.0",
     "nyc": "^15.1.0",
     "standard": "^16.0.3",
-    "standard-version": "^9.3.0"
+    "standard-version": "^9.3.0",
+    "typescript": "^4.3.5"
   },
   "config": {
     "commitizen": {

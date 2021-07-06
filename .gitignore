@@ -1,3 +1,6 @@
+# Generated type declarations
+/types
+
 # Logs
 logs
 *.log
