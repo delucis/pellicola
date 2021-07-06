@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/delucis/pellicola/compare/v0.11.6...v0.12.0) (2021-07-06)
+
+
+### Features
+
+* Use JSDoc comments to compile TypeScript declaration files ([88d1b5f](https://github.com/delucis/pellicola/commit/88d1b5fd1ae44b868c06689e2cec4c9ac75c0c22))
+
 ### [0.11.6](https://github.com/delucis/pellicola/compare/v0.11.5...v0.11.6) (2021-07-06)
 
 ### [0.11.5](https://github.com/delucis/pellicola/compare/v0.11.4...v0.11.5) (2021-04-29)
