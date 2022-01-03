@@ -60,7 +60,7 @@
     "aproba": "^2.0.0",
     "canvas": "^2.7.0",
     "del": "^6.0.0",
-    "ffmpeg-static": "^4.4.0",
+    "ffmpeg-static": "^4.4.1",
     "ora": "^5.4.1",
     "p-queue": "^6.6.2",
     "tempy": "^1.0.1"
