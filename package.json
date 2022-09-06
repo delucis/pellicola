@@ -58,7 +58,7 @@
   ],
   "dependencies": {
     "aproba": "^2.0.0",
-    "canvas": "^2.9.3",
+    "canvas": "^2.10.0",
     "del": "^6.1.1",
     "ffmpeg-static": "^5.0.2",
     "ora": "^5.4.1",
