@@ -33,7 +33,7 @@
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
     "ninos": "^3.0.0",
-    "nyc": "^15.1.0",
+    "nyc": "^17.1.0",
     "standard": "^17.0.0",
     "standard-version": "^9.3.0",
     "typescript": "^5.0.4"
